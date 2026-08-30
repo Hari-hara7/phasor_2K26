@@ -1,108 +1,110 @@
 // ============================================================
-// All YANTRA 2K26 content lives here. Edit this file, not the
+// All PHASOR 2K26 content lives here. Edit this file, not the
 // components, when copy changes (dates, fees, coordinators...).
 // ============================================================
 
 export const site = {
-  name: "YANTRA 2K26",
-  tagline: "Gear Up to Reign...",
-  motto: "Man Made by Mechanism, World Ruled by Mechanicals",
-  dates: "25th, 26th & 27th September 2026",
-  college: "JNTU Anantapur College of Engineering (Autonomous), Pulivendula",
-  address: "Muddanur Road, Pulivendula, Y.S.R Kadapa (Dist.), A.P — 516390, INDIA",
-  department: "Department of Mechanical Engineering",
+  name: "PHASOR 2K26",
+  tagline: "Where ideas flow without resistance...",
+  motto: "A national level technical symposium and workshop for electrical innovators",
+  dates: "6th, 7th & 8th October 2026",
+  college: "JNTUA College of Engineering (Autonomous), Pulivendula",
+  address: "Pulivendula, Kadapa (Dist.), Andhra Pradesh - 516390",
+  department: "Department of Electrical and Electronics Engineering",
+  venue: "Seminar Hall, EEE Department, JNTUA Pulivendula",
 
   registerUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLScWGi9S33dmit53zkMDunrqbNNjXiX7os1aPE-GrqY3U01O2Q/viewform?usp=publish-editor",
 
   contact: {
-    email: "yantra.mech@gmail.com",
-    website: "https://yantra-mech.com",
-    instagram: "yantra_2k26",
+    email: "phasor2k26@gmail.com",
+    website: "https://jntuacep.ac.in/departments/dept-of-eee/",
+    instagram: "phasor2k26",
+    youtube: "youtube.com/@phasor2k26",
   },
 
   about: [
-    `The pioneer of technology. The Mechanical Engineer's endeavour proved again through YANTRA. "Man made by Mechanisms, World ruled by Mechanicals" is the tagline of YANTRA.`,
-    `Can you imagine life without proper mechanisms? Or life from ancient man to modern man without the involvement of mechanical engineering? Of course not. To this ancient art of engineering, many significant changes have taken place — and to track the latest technological developments, it's necessary to build a platform for the exchange of knowledge. That platform is this symposium, organized every year since 2008.`,
-    `YANTRA invites all budding engineers and knowledge enthusiasts to share and explore the possibilities of understanding contemporary technical advancements.`,
+    `PHASOR 2K26 is a national level technical symposium and workshop presented by the Department of Electrical and Electronics Engineering, JNTUA College of Engineering Pulivendula.`,
+    `Built around the spirit of electrical innovation, the symposium brings students, faculty, and industry voices together for workshops, technical events, career guidance, and collaborative learning.`,
+    `The theme "where ideas flow without resistance" reflects the department's focus on power systems, renewable energy, embedded intelligence, and practical engineering skills for the next generation of EEE students.`,
   ],
 
   aboutMeta: [
-    { label: "Student chapter", value: "Institution of Engineers (India), Code 516" },
-    { label: "Association", value: "Mechanical Engineering Student Association (MESA)" },
-    { label: "Membership", value: "NAFEMS — international engineering analysis community" },
-    { label: "Running since", value: "2008" },
+    { label: "Symposium", value: "National level technical symposium and workshop" },
+    { label: "Dates", value: "6, 7 and 8 October 2026" },
+    { label: "Venue", value: "Seminar Hall, EEE Department" },
+    { label: "Contact", value: "phasor2k26@gmail.com" },
   ],
 
   workshops: [
     {
-      title: "Quadruped Robot",
-      tag: "Robotics",
-      desc: "Hands-on build and control session on legged robot locomotion and gait mechanics.",
-      img: "quadruped-robot.jpg",
+      title: "AI / Embedded Systems for Drone Swarm Technology",
+      tag: "Embedded AI",
+      desc: "Explore intelligent embedded systems, coordination logic, and real-world drone swarm applications.",
+      icon: "drone",
+      speaker: "N. Venkat Reddy, Founder and CEO, Vihaan Electrix Techybot",
     },
     {
-      title: "Boot Camp on Drone Technology",
-      tag: "Aerial Systems",
-      desc: "From flight fundamentals to assembly and control — an intensive drone-building bootcamp.",
-      img: "drone-bootcamp.jpg",
+      title: "Grid Integration of Renewable Energy Resources",
+      tag: "Power Systems",
+      desc: "A focused workshop on renewable energy integration, grid stability, and modern power infrastructure.",
+      icon: "grid",
+      speaker: "Dr. P. Srinivasa Varma and D. Ramesh Kumar Babu",
     },
     {
-      title: "Digital Marketing for Startups",
-      tag: "Business",
-      desc: "Practical growth playbook for engineers building a startup: positioning, channels, and content.",
-      img: "digital-marketing.jpg",
+      title: "Career Guidance",
+      tag: "Faculty Members",
+      desc: "Guidance sessions for students on career paths, skill building, higher studies, and industry readiness.",
+      icon: "career",
+      speaker: "Faculty members, Department of EEE",
     },
   ],
 
   events: [
-    { name: "Poster Presentation", icon: "poster" },
-    { name: "Project Exhibition", icon: "project" },
     { name: "Paper Presentation", icon: "paper" },
-    { name: "Cultural Night", icon: "culture" },
-    { name: "Photo Contest", icon: "camera" },
-    { name: "Short Film Contest", icon: "film" },
     { name: "Technical Quiz", icon: "quiz" },
+    { name: "Photo Contest", icon: "camera" },
+    { name: "Culturals", icon: "culture" },
+    { name: "Spot Events", icon: "trophy" },
   ],
 
   fees: [
-    { label: "Workshop", price: "₹1,000 / person", note: "Includes accommodation" },
-    { label: "Each Event", price: "₹100 / person", note: "+ ₹400 for accommodation (optional)" },
+    { label: "For Each Workshop", price: "Rs. 500/-", note: "Per participant" },
+    { label: "For Both Workshops", price: "Rs. 800/-", note: "Combined workshop pass" },
+    { label: "For Each Event", price: "Rs. 100/-", note: "Per event" },
   ],
 
-  prizeWorth: "₹30,000",
+  prizeWorth: "Events, workshops & career guidance",
 
-  // ⚠️ This is the EEE department's official blurb, pasted in by mistake —
-  // YANTRA is run by the Dept. of Mechanical Engineering per the poster.
-  // Swap this string for the ME department's actual "about" text when
-  // you have it (e.g. from https://jntuacep.ac.in/departments/dept-of-mech/).
-  departmentAbout: `The department offers programs providing a platform for bright graduates to conduct research in state-of-the-art technologies. The program is one of the most sought-after in the state of Andhra Pradesh, attracting top-ranking students. Every qualifying student is hired by multinational corporations across the IT, financial, and public sectors, with a strong share of graduates going on to doctoral and postgraduate programs at prestigious universities in India and abroad.
+  collegeAbout: `University College of Engineering, Pulivendula, J.N.T. University Anantapur has been established with the social objective of providing technical education that is accessible and affordable to rural people. The college foundation was laid on 25th December 2005 by former Chief Minister of Andhra Pradesh, late Dr. Y. S. Rajashekhara Reddy garu.
 
-The department's main objective is to generate young engineers with a high degree of knowledge, competence, and resourcefulness who can excel across a range of job profiles — building a solid foundation in both the technical and analytical facets of the discipline, with strong emphasis on mini-projects, communication skills, industrial internships, and national/international design competitions.`,
+The institute is one of the University Colleges of JNTU Anantapur, Ananthapuramu and is a government run institute. With dedicated faculty, staff, and sincere student effort, the institute has earned a good reputation in the J.N.T. University Anantapur region.
+
+The institute has 175 acres of land and a built-up area of 22,320.00 sq.m. At present, the institute has adequate building accommodation to house all academic programmes offered at the campus.`,
+
+  departmentAbout: `The Electrical and Electronics Engineering (EEE) department was established in the year 2006. The department offers an Under Graduate program in Electrical and Electronics Engineering, full-time Post Graduate programs in Electrical Power Systems and Power Electronics and Drives, and a part-time Post Graduate program in Electrical Power Systems.
+
+These programs provide a platform for bright graduates and support research in state-of-the-art technologies. The B.Tech in EEE at JNTUA College of Engineering Pulivendula is one of the sought-after programs in Andhra Pradesh and attracts top students qualifying in APEAPCET. The M.Tech program is also sought after by students qualifying in GATE and PGECET examinations.`,
 
   departmentSourceUrl: "https://jntuacep.ac.in/departments/dept-of-eee/",
 
   people: {
-    chiefGuest: "Sr. Prof. H. Sudarshan — Hon'ble Vice Chancellor, JNTUA",
-    patron: "Prof. D. Vishnu Vardhan Reddy — Principal, JNTUACEP",
-    coPatron: "Prof. K. Sesha Mahesh — Vice-Principal, JNTUACEP",
-    convener: "Sr. Prof. V. Venugopal Reddy — Head, Dept. of Mechanical Engineering",
+    patron: "Dr. D. Vishnu Vardhan, Principal, JNTUACEP",
+    coPatron: "Prof. K. Sesha Maheswaramma, Vice Principal, JNTUACEP",
+    convener: "Dr. J. Sreenivasulu, Associate Professor and HOD",
+    coConvener: "Dr. Shaik Hussain Vali, Assistant Professor",
+    workshopCoordinator: "Dr. R. Narendra Rao - 9866653043",
     staffCoordinators: [
-      "Mr. B. Sreenivasa Kumar Reddy",
-      "Mr. S. Prateep Kumar",
-      "Mr. K. Pavan Kumar Reddy",
-      "Mr. B. Yeswanth Kumar",
-      "Mr. M. Rajesh",
-      "Mr. C. Chandrasekhar",
-      "Smt. S. Aparna",
-      "Mr. V. Madhusudhan Reddy",
+      { name: "Sri. T. Obulesu", phone: "8179271946" },
+      { name: "Sri. B. Narasimha Reddy", phone: "9848781019" },
+      { name: "Sri. V. V. Krishna Reddy", phone: "9963426011" },
     ],
     studentCoordinators: [
-      { name: "P. Bharath Kumar", phone: "6305494236" },
-      { name: "M. Chandan", phone: "8330982021" },
-      { name: "G. Gowtham", phone: "9701986006" },
-      { name: "M. Gayathri", phone: "8019450184" },
-      { name: "A. Sai Teja", phone: "7075830062" },
+      { name: "C. Pavan", phone: "8978962027" },
+      { name: "K. Bhargava Kumar", phone: "9652909271" },
+      { name: "A. Rushendra Reddy", phone: "9014355906" },
+      { name: "D. Prathiha", phone: "7673961972" },
+      { name: "M. Greeshma", phone: "9441061266" },
     ],
   },
 };

@@ -2,12 +2,12 @@
 import { site } from "../data/site.js";
 
 const icons: Record<string, string> = {
-  "quadruped-robot.jpg":
-    "M20 55 L20 40 M20 40 L14 30 M20 40 L26 32 M50 55 L50 38 M50 38 L44 28 M50 38 L56 30 M20 55 L50 55 M35 55 L35 34 L45 20",
-  "drone-bootcamp.jpg":
-    "M35 35 L20 20 M35 35 L50 20 M35 35 L20 50 M35 35 L50 50 M20 20 L14 14 L26 14 Z M50 20 L44 14 L56 14 Z M20 50 L14 56 L26 56 Z M50 50 L44 56 L56 56 Z",
-  "digital-marketing.jpg":
-    "M14 30 L14 42 L24 42 L38 54 L38 18 L24 30 Z M46 24 Q54 30 54 36 Q54 42 46 48 M42 30 Q46 33 46 36 Q46 39 42 42",
+  drone:
+    "M35 35 L18 18 M35 35 L52 18 M35 35 L18 52 M35 35 L52 52 M18 18 C12 12 26 12 18 18 M52 18 C44 12 58 12 52 18 M18 52 C12 58 26 58 18 52 M52 52 C44 58 58 58 52 52 M28 35 H42",
+  grid:
+    "M35 10 L20 58 M35 10 L50 58 M25 42 H45 M20 58 H50 M12 24 H58 M12 24 L12 58 M58 24 L58 58 M35 24 V58",
+  career:
+    "M16 52 H54 M20 52 C22 38 30 30 42 24 M42 24 H30 M42 24 V36 M26 18 C26 12 44 12 44 18 C44 24 26 24 26 18",
 };
 ---
 
@@ -16,7 +16,7 @@ const icons: Record<string, string> = {
     <div class="section-head">
       <span class="eyebrow">Hands-on tracks</span>
       <h2>Workshops</h2>
-      <p>Three intensive tracks running across the symposium — build, fly, and pitch.</p>
+      <p>Electrical innovation tracks covering embedded intelligence, renewable grids, and career direction.</p>
     </div>
 
     <div class="w-grid">
@@ -25,15 +25,18 @@ const icons: Record<string, string> = {
           <div class="w-top">
             <span class="w-index">{String(i + 1).padStart(2, "0")}</span>
             <svg viewBox="0 0 70 70" width="52" height="52" class="w-icon">
-              <path d={icons[w.img]} fill="none" stroke="var(--teal)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d={icons[w.icon]} fill="none" stroke="var(--teal)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </div>
           <span class="w-tag">{w.tag}</span>
           <h3>{w.title}</h3>
           <p>{w.desc}</p>
+          <p class="speaker">{w.speaker}</p>
         </article>
       ))}
     </div>
+
+    <p class="venue">Venue: {site.venue}</p>
   </div>
 </section>
 
@@ -46,11 +49,16 @@ const icons: Record<string, string> = {
     border: 1px solid var(--line);
   }
   .w-card {
-    background: var(--bg-panel);
+    background:
+      linear-gradient(180deg, rgba(0, 194, 255, 0.08), transparent 42%),
+      var(--bg-panel);
     padding: 32px;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
   }
-  .w-card:hover { background: var(--bg-panel-2); }
+  .w-card:hover {
+    background: var(--bg-panel-2);
+    box-shadow: inset 0 0 0 1px rgba(0, 194, 255, 0.28);
+  }
   .w-top {
     display: flex;
     align-items: flex-start;
@@ -61,6 +69,9 @@ const icons: Record<string, string> = {
     font-family: var(--font-mono);
     color: var(--text-faint);
     font-size: 0.85rem;
+  }
+  .w-icon {
+    filter: drop-shadow(0 0 12px rgba(0, 194, 255, 0.35));
   }
   .w-tag {
     display: inline-block;
@@ -78,6 +89,18 @@ const icons: Record<string, string> = {
   .w-card p {
     color: var(--text-muted);
     font-size: 0.92rem;
+  }
+  .speaker {
+    margin-top: 18px;
+    color: var(--text) !important;
+    font-family: var(--font-mono);
+    font-size: 0.78rem !important;
+  }
+  .venue {
+    margin-top: 28px;
+    color: var(--teal);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
   }
 
   @media (max-width: 860px) {

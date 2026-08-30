@@ -21,7 +21,7 @@ import { site } from "../data/site.js";
 
     <aside class="prize-panel">
       <div class="prize-top">
-        <span class="eyebrow">Prizes worth</span>
+        <span class="eyebrow">Registration</span>
         <p class="prize-amount">{site.prizeWorth}</p>
       </div>
 
@@ -38,7 +38,7 @@ import { site } from "../data/site.js";
       </div>
 
       <a class="btn btn-primary block" href={site.registerUrl} target="_blank" rel="noopener noreferrer">
-        Register now →
+        Register now ->
       </a>
     </aside>
   </div>
@@ -75,14 +75,16 @@ import { site } from "../data/site.js";
   }
 
   .prize-panel {
-    background: var(--bg-panel);
+    background:
+      linear-gradient(145deg, rgba(0, 194, 255, 0.1), transparent 40%),
+      var(--bg-panel);
     border: 1px solid var(--line-bright);
     border-radius: var(--radius);
     padding: 32px;
   }
   .prize-amount {
     font-family: var(--font-display);
-    font-size: 2.6rem;
+    font-size: 2rem;
     color: var(--gold);
     margin-top: 8px;
   }
