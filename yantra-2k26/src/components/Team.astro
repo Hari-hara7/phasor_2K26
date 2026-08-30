@@ -1,0 +1,89 @@
+---
+import { site } from "../data/site.js";
+const { people } = site;
+---
+
+<section id="team" class="section no-border">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Behind YANTRA</span>
+      <h2>Team &amp; coordinators</h2>
+    </div>
+
+    <div class="t-grid">
+      <div class="t-block wide">
+        <p class="t-label">Leadership</p>
+        <ul class="t-list">
+          <li>{people.chiefGuest}</li>
+          <li>{people.patron}</li>
+          <li>{people.coPatron}</li>
+          <li>{people.convener}</li>
+        </ul>
+      </div>
+
+      <div class="t-block">
+        <p class="t-label">Staff coordinators</p>
+        <ul class="t-list">
+          {people.staffCoordinators.map((n) => (
+            <li>{n}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="t-block">
+        <p class="t-label">Student coordinators</p>
+        <ul class="t-list">
+          {people.studentCoordinators.map((s) => (
+            <li>
+              <span>{s.name}</span>
+              <a href={`tel:${s.phone}`} class="phone">{s.phone}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .no-border { border-bottom: none; }
+  .t-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+  }
+  .t-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 16px;
+  }
+  .t-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .t-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 0.94rem;
+    color: var(--text);
+  }
+  .wide .t-list li { display: block; color: var(--text-muted); }
+  .phone {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--text-faint);
+    white-space: nowrap;
+  }
+  .phone:hover { color: var(--teal); }
+
+  @media (max-width: 860px) {
+    .t-grid { grid-template-columns: 1fr; gap: 28px; }
+  }
+</style>

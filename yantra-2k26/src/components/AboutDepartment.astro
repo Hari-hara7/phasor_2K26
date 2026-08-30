@@ -1,0 +1,48 @@
+---
+import { site } from "../data/site.js";
+---
+
+<section id="department" class="section">
+  <div class="wrap dept-grid">
+    <div class="section-head no-max">
+      <span class="eyebrow">Hosted by</span>
+      <h2>{site.department}</h2>
+    </div>
+    <div class="dept-copy">
+      {site.departmentAbout.split("\n\n").map((p) => (
+        <p>{p}</p>
+      ))}
+      <a class="source-link" href={site.departmentSourceUrl} target="_blank" rel="noopener noreferrer">
+        Full department page →
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .dept-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 56px;
+  }
+  .no-max { max-width: none; margin-bottom: 0; }
+  .dept-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 620px;
+  }
+  .source-link {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--teal);
+    margin-top: 6px;
+  }
+  .source-link:hover { color: var(--gold); }
+
+  @media (max-width: 860px) {
+    .dept-grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+</style>

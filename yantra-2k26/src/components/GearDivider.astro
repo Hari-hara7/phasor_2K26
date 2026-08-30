@@ -1,0 +1,82 @@
+---
+// Two interlocked gears that counter-rotate — the page's signature motif.
+// Used as a structural divider between sections, echoing the "Man Made
+// by Mechanism" motto rather than a plain hairline.
+export interface Props {
+  flip?: boolean;
+}
+const { flip = false } = Astro.props;
+
+function gearPath(teeth: number, rOuter: number, rInner: number, rHole: number) {
+  const step = (Math.PI * 2) / (teeth * 2);
+  let d = "";
+  for (let i = 0; i < teeth * 2; i++) {
+    const r = i % 2 === 0 ? rOuter : rInner;
+    const a = i * step;
+    const x = 60 + r * Math.cos(a);
+    const y = 60 + r * Math.sin(a);
+    d += (i === 0 ? "M" : "L") + x.toFixed(2) + "," + y.toFixed(2) + " ";
+  }
+  d += "Z";
+  return d;
+}
+
+const bigGear = gearPath(14, 52, 44, 0);
+const smallGear = gearPath(10, 30, 24, 0);
+---
+
+<div class:list={["gear-divider", { flip }]} aria-hidden="true">
+  <svg class="gear gear-a" viewBox="0 0 120 120" width="86" height="86">
+    <path d={bigGear} fill="none" stroke="var(--line-bright)" stroke-width="1.5" />
+    <circle cx="60" cy="60" r="16" fill="none" stroke="var(--line-bright)" stroke-width="1.5" />
+  </svg>
+  <svg class="gear gear-b" viewBox="0 0 120 120" width="52" height="52">
+    <path d={smallGear} fill="none" stroke="var(--teal-dim)" stroke-width="1.5" />
+    <circle cx="60" cy="60" r="10" fill="none" stroke="var(--teal-dim)" stroke-width="1.5" />
+  </svg>
+  <div class="rail"></div>
+</div>
+
+<style>
+  .gear-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  .rail {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: var(--line);
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+  .gear {
+    position: relative;
+    z-index: 1;
+    background: var(--bg);
+  }
+  .gear-a {
+    animation: spin 22s linear infinite;
+  }
+  .gear-b {
+    margin-left: -14px;
+    animation: spin-rev 15.7s linear infinite;
+  }
+  .flip .gear-a { animation-direction: reverse; }
+  .flip .gear-b { animation-direction: normal; }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes spin-rev {
+    to { transform: rotate(-360deg); }
+  }
+</style>

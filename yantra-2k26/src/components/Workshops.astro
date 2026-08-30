@@ -1,0 +1,86 @@
+---
+import { site } from "../data/site.js";
+
+const icons: Record<string, string> = {
+  "quadruped-robot.jpg":
+    "M20 55 L20 40 M20 40 L14 30 M20 40 L26 32 M50 55 L50 38 M50 38 L44 28 M50 38 L56 30 M20 55 L50 55 M35 55 L35 34 L45 20",
+  "drone-bootcamp.jpg":
+    "M35 35 L20 20 M35 35 L50 20 M35 35 L20 50 M35 35 L50 50 M20 20 L14 14 L26 14 Z M50 20 L44 14 L56 14 Z M20 50 L14 56 L26 56 Z M50 50 L44 56 L56 56 Z",
+  "digital-marketing.jpg":
+    "M14 30 L14 42 L24 42 L38 54 L38 18 L24 30 Z M46 24 Q54 30 54 36 Q54 42 46 48 M42 30 Q46 33 46 36 Q46 39 42 42",
+};
+---
+
+<section id="workshops" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Hands-on tracks</span>
+      <h2>Workshops</h2>
+      <p>Three intensive tracks running across the symposium — build, fly, and pitch.</p>
+    </div>
+
+    <div class="w-grid">
+      {site.workshops.map((w, i) => (
+        <article class="w-card">
+          <div class="w-top">
+            <span class="w-index">{String(i + 1).padStart(2, "0")}</span>
+            <svg viewBox="0 0 70 70" width="52" height="52" class="w-icon">
+              <path d={icons[w.img]} fill="none" stroke="var(--teal)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <span class="w-tag">{w.tag}</span>
+          <h3>{w.title}</h3>
+          <p>{w.desc}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .w-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .w-card {
+    background: var(--bg-panel);
+    padding: 32px;
+    transition: background 0.2s ease;
+  }
+  .w-card:hover { background: var(--bg-panel-2); }
+  .w-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+  .w-index {
+    font-family: var(--font-mono);
+    color: var(--text-faint);
+    font-size: 0.85rem;
+  }
+  .w-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .w-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+  }
+  .w-card p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 860px) {
+    .w-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,122 @@
+---
+import { site } from "../data/site.js";
+---
+
+<section id="events" class="section">
+  <div class="wrap events-grid">
+    <div>
+      <div class="section-head no-max">
+        <span class="eyebrow">Compete &amp; showcase</span>
+        <h2>Events</h2>
+      </div>
+      <ol class="e-list">
+        {site.events.map((e, i) => (
+          <li>
+            <span class="e-num">{String(i + 1).padStart(2, "0")}</span>
+            <span class="e-name">{e.name}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <aside class="prize-panel">
+      <div class="prize-top">
+        <span class="eyebrow">Prizes worth</span>
+        <p class="prize-amount">{site.prizeWorth}</p>
+      </div>
+
+      <div class="fee-rows">
+        {site.fees.map((f) => (
+          <div class="fee-row">
+            <div>
+              <p class="fee-label">{f.label}</p>
+              <p class="fee-note">{f.note}</p>
+            </div>
+            <p class="fee-price">{f.price}</p>
+          </div>
+        ))}
+      </div>
+
+      <a class="btn btn-primary block" href={site.registerUrl} target="_blank" rel="noopener noreferrer">
+        Register now →
+      </a>
+    </aside>
+  </div>
+</section>
+
+<style>
+  .events-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .no-max { max-width: none; margin-bottom: 32px; }
+
+  .e-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .e-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+  }
+  .e-num {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--teal);
+    width: 30px;
+  }
+
+  .prize-panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--line-bright);
+    border-radius: var(--radius);
+    padding: 32px;
+  }
+  .prize-amount {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    color: var(--gold);
+    margin-top: 8px;
+  }
+  .fee-rows {
+    margin-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .fee-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .fee-label { font-weight: 600; }
+  .fee-note {
+    color: var(--text-faint);
+    font-size: 0.82rem;
+    margin-top: 4px;
+  }
+  .fee-price {
+    font-family: var(--font-mono);
+    color: var(--teal);
+    white-space: nowrap;
+  }
+  .block {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 28px;
+  }
+
+  @media (max-width: 860px) {
+    .events-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+</style>

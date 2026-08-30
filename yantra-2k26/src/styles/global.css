@@ -1,0 +1,170 @@
+/* ===== YANTRA 2K26 — design tokens =====
+   Direction: engineering blueprint. Dark graphite "drafting table" surface,
+   teal ink (matches the poster's YANTRA wordmark) + brass/gold for prizes
+   and highlights. Rajdhani for display (geometric, technical-drawing feel),
+   Inter for body, Space Mono for annotations/labels — like dimension text
+   on a mechanical drawing.
+*/
+
+:root {
+  --bg: #0a0d12;
+  --bg-panel: #12161d;
+  --bg-panel-2: #171d27;
+  --line: #232b38;
+  --line-bright: #34495f;
+
+  --teal: #35e0c4;
+  --teal-dim: #1f8f7d;
+  --gold: #f2b441;
+  --gold-dim: #b9852a;
+
+  --text: #eaeef3;
+  --text-muted: #8c96a6;
+  --text-faint: #5b6472;
+
+  --font-display: "Rajdhani", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+
+  --radius: 4px;
+  --container: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+p { margin: 0; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img { max-width: 100%; display: block; }
+
+.wrap {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--teal);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 14px 26px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line-bright);
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: #061412;
+  border-color: var(--teal);
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #4bf0d4;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+/* faint blueprint grid, used behind hero + section backdrops */
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(53, 224, 196, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(53, 224, 196, 0.06) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+.section-head {
+  max-width: 640px;
+  margin-bottom: 56px;
+}
+
+.section-head h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-top: 14px;
+}
+
+.section-head p {
+  margin-top: 16px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+@media (max-width: 640px) {
+  .section { padding: 64px 0; }
+  .section-head { margin-bottom: 36px; }
+}

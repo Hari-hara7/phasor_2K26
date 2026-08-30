@@ -1,0 +1,98 @@
+---
+import { site } from "../data/site.js";
+const year = new Date().getFullYear();
+---
+
+<footer class="foot blueprint-grid">
+  <div class="wrap foot-inner">
+    <div class="foot-top">
+      <div>
+        <span class="eyebrow">Get in</span>
+        <h3>Touch</h3>
+      </div>
+      <a class="btn btn-primary" href={site.registerUrl} target="_blank" rel="noopener noreferrer">
+        Register for YANTRA 2K26 →
+      </a>
+    </div>
+
+    <div class="foot-grid">
+      <div>
+        <p class="label">Organized by</p>
+        <p>{site.department}</p>
+        <p class="muted">{site.college}</p>
+        <p class="muted">{site.address}</p>
+      </div>
+      <div>
+        <p class="label">Contact</p>
+        <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+        <p></p>
+        <a href={site.contact.website} target="_blank" rel="noopener noreferrer">{site.contact.website.replace("https://", "")}</a>
+        <p></p>
+        <a href={`https://instagram.com/${site.contact.instagram}`} target="_blank" rel="noopener noreferrer">@{site.contact.instagram}</a>
+      </div>
+      <div>
+        <p class="label">Dates</p>
+        <p>{site.dates}</p>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© {year} {site.name} — {site.department}</span>
+      <span class="muted">"{site.motto}"</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .foot {
+    padding: 72px 0 28px;
+    background-color: var(--bg-panel);
+  }
+  .foot-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-bottom: 44px;
+    border-bottom: 1px solid var(--line);
+  }
+  .foot-top h3 {
+    font-size: 2.2rem;
+    margin-top: 6px;
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 32px;
+    padding: 44px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.92rem;
+  }
+  .foot-grid a { color: var(--text-muted); }
+  .foot-grid a:hover { color: var(--teal); }
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+  .muted { color: var(--text-faint); }
+  .foot-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 22px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-faint);
+  }
+
+  @media (max-width: 700px) {
+    .foot-grid { grid-template-columns: 1fr; gap: 24px; }
+    .foot-bottom { flex-direction: column; }
+  }
+</style>
