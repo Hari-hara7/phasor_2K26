@@ -6,7 +6,7 @@ const { people } = site;
 <section id="team" class="section no-border">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Behind YANTRA</span>
+      <span class="eyebrow">Behind PHASOR</span>
       <h2>Team &amp; coordinators</h2>
     </div>
 
@@ -14,7 +14,6 @@ const { people } = site;
       <div class="t-block wide">
         <p class="t-label">Leadership</p>
         <ul class="t-list">
-          <li>{people.chiefGuest}</li>
           <li>{people.patron}</li>
           <li>{people.coPatron}</li>
           <li>{people.convener}</li>
@@ -24,8 +23,11 @@ const { people } = site;
       <div class="t-block">
         <p class="t-label">Staff coordinators</p>
         <ul class="t-list">
-          {people.staffCoordinators.map((n) => (
-            <li>{n}</li>
+          {people.staffCoordinators.map((s) => (
+            <li>
+              <span>{s.name}</span>
+              <a href={`tel:${s.phone}`} class="phone">{s.phone}</a>
+            </li>
           ))}
         </ul>
       </div>
