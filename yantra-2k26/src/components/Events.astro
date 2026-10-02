@@ -37,10 +37,33 @@ import { site } from "../data/site.js";
         ))}
       </div>
 
+      <ul class="rules">
+        {site.rules.map((r) => <li>{r}</li>)}
+      </ul>
+
       <a class="btn btn-primary block" href={site.registerUrl} target="_blank" rel="noopener noreferrer">
         Register now ->
       </a>
     </aside>
+  </div>
+
+  <div class="wrap topics">
+    <div class="section-head no-max">
+      <span class="eyebrow">Paper &amp; Poster</span>
+      <h2>Topics</h2>
+    </div>
+    <div class="topic-grid">
+      {site.topics.map((t, i) => (
+        <article class="topic-card">
+          <span class="e-num">{String(i + 1).padStart(2, "0")}</span>
+          <h3>{t.title}</h3>
+          <p class="topic-tag"> Paper Presentation</p>
+          <ul>{t.papers.map((p) => <li>{p}</li>)}</ul>
+          <p class="topic-tag"> Poster Presentation</p>
+          <ul>{t.posters.map((p) => <li>{p}</li>)}</ul>
+        </article>
+      ))}
+    </div>
   </div>
 </section>
 
@@ -111,6 +134,18 @@ import { site } from "../data/site.js";
     color: var(--teal);
     white-space: nowrap;
   }
+
+  .rules {
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+    color: var(--text-faint);
+    font-size: 0.85rem;
+    display: grid;
+    gap: 8px;
+  }
+  .rules li::before { content: "• "; color: var(--teal); }
+
   .block {
     display: flex;
     justify-content: center;
@@ -118,7 +153,37 @@ import { site } from "../data/site.js";
     margin-top: 28px;
   }
 
+  .topics { margin-top: 72px; }
+  .topic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .topic-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px;
+  }
+  .topic-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin: 8px 0 18px;
+  }
+  .topic-tag {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--teal);
+    margin: 16px 0 8px;
+  }
+  .topic-card ul {
+    margin: 0;
+    padding-left: 18px;
+    line-height: 1.6;
+  }
+
   @media (max-width: 860px) {
     .events-grid { grid-template-columns: 1fr; gap: 40px; }
+    .topic-grid { grid-template-columns: 1fr; }
   }
 </style>
