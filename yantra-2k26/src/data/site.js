@@ -13,8 +13,9 @@ export const site = {
   department: "Department of Electrical and Electronics Engineering",
   venue: "Seminar Hall, EEE Department, JNTUA Pulivendula",
 
+  // UPDATED: new registration form
   registerUrl:
-    "https://docs.google.com/forms/d/e/1FAIpQLScWGi9S33dmit53zkMDunrqbNNjXiX7os1aPE-GrqY3U01O2Q/viewform?usp=publish-editor",
+    "https://docs.google.com/forms/d/e/1FAIpQLSdpMiZTE7tsOKSGAYdfUssYpHv65XGE6f5qQZeD62AOeyWJpQ/viewform?usp=publish-editor",
 
   contact: {
     email: "phasor2k26@gmail.com",
@@ -68,10 +69,45 @@ export const site = {
     { name: "Spot Events", icon: "trophy" },
   ],
 
+  // UPDATED: event note + parent accommodation row
   fees: [
     { label: "For Each Workshop", price: "Rs. 500/-", note: "Per participant" },
     { label: "For Both Workshops", price: "Rs. 800/-", note: "Combined workshop pass" },
-    { label: "For Each Event", price: "Rs. 100/-", note: "Per event" },
+    { label: "For Each Event", price: "Rs. 100/-", note: "Per person, per event. Teams of 2 only" },
+    { label: "Parent Accommodation", price: "Rs. 300/-", note: "If parents accompany you" },
+  ],
+
+  // NEW: registration rules
+  rules: [
+    "Each team has exactly two members.",
+    "Each person pays Rs. 100/- for each event.",
+    "Parents accompanying participants: Rs. 300/- for accommodation.",
+  ],
+
+  // NEW: paper & poster topics
+  topics: [
+    {
+      title: "AI in Embedded Systems & Drone Swarm Technology",
+      papers: [
+        "TinyML: Bringing Artificial Intelligence to Embedded Systems",
+        "AI-Based Autonomous Navigation and Collision Avoidance in Drone Swarms",
+      ],
+      posters: [
+        "“When Drones Think as One” – Intelligence Behind Drone Swarms",
+        "“TinyML – AI on a Chip”",
+      ],
+    },
+    {
+      title: "Grid Integration of Renewable Energy Sources",
+      papers: [
+        "Grid-Forming Inverters for Renewable Energy Integration",
+        "AI-Based Renewable Energy Forecasting and Grid Management",
+      ],
+      posters: [
+        "“Grid of Tomorrow: Smart, Green & Resilient”",
+        "“Grid-Forming Inverters: Building the Renewable Grid”",
+      ],
+    },
   ],
 
   prizeWorth: "Events, workshops & career guidance",
